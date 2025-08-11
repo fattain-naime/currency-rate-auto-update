@@ -1,0 +1,6 @@
+{
+    "type": "plugins",
+    "slug": "currency-rate-auto-update",
+    "name": "Currency Rate Auto Update",
+    "mrdr": "modules"
+}
