@@ -1,6 +1,7 @@
-=== Currency Rate Auto Update ===
+=== FX Rate Sync ===
 Developer: Fattain Naime
-Tags: currency, exchange rate, forex, automation, updater, exchangerate-api, piprapay
+Tags: currency, exchange rate, forex, automation, updater, exchangerate-api, cdn jddelivr, piprapay
+required: PipraPay Core
 Requires at least: 1.0.0
 Tested up to: 1.0.0
 Stable tag: 1.0.0
@@ -9,24 +10,29 @@ License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
 == Description ==
 
-Automatically updates currency conversion rates in PipraPay every day at 00:01 (server time) using ExchangeRate-API (v6).
-The base currency is taken from PipraPay's default currency. The base currency rate is always set to **1** and is **never** overwritten by the API.
+Automatically updates currency rates for PipraPay. Supports ExchangeRate-API (v6) and Free Currency Exchange Rates API (jsDelivr) & auto update 4x every day at 00:01 /06:01 / 12:01 /18:01. (server time) using ExchangeRate-API or jsDelivr-API.
 
-*What it does:*
-- Detects the default/base currency from PipraPay.
-- Calls ExchangeRate-API: `GET https://v6.exchangerate-api.com/v6/YOUR-API-KEY/latest/{BASE}`.
-- Updates `currency rate` for each currency code found in the table.
-- Writes timestamps for **Last Update** and **Next Update** and shows them in the admin UI.
-- Supports an instant **Force Update** button in the admin.
-
-*Admin Settings:*
-- Currency API: `ExchangeRate-API (v6)`
-- API Key (input)
-- Last Update (DD/MM/YYYY, 24h)
-- Next Update (DD/MM/YYYY, 24h)
-- Buttons: **Save** | **Update Currency Rate Now**
+== Admin Settings:==
+* Module Enable/Disable
+* Currency API: `ExchangeRate-API of Free Currency Exchange Rates`
+* API Key (input)
+* Last Update (DD/MM/YYYY, 24h)
+* Next Update (DD/MM/YYYY, 24h)
+* Buttons: Save | Force Update
+* Debug Panel
+* Cron Job 
 
 == Changelog ==
+
+= 1.1.0 =
+* Added: Admin ON/OFF switch to globally enable/disable auto updates.
+* Added: Second provider Free Currency Exchange Rates API (jsDelivr). No API key required.
+* Added: Provider selector with contextual help links.
+* Added: Collapsible Debug info panel: counts updated/failed, list of failures, API error snippets, provider/source URL, cron status & last run time, and a Force run cron button.
+* Changed: Update cadence to 4x daily at 00:01 /06:01 / 12:01 /18:01.
+* Changed: "Update Currency Rate Now" → "Force Update".
+* Fixed: Normalized several currency codes.
+* Internal: Defensive parsing of jsDelivr responses; uppercase normalization of currency codes; lightweight run logging
 
 = 1.0.0 =
 * Initial release
