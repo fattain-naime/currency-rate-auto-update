@@ -1,6 +1,6 @@
 {
     "type": "plugins",
     "slug": "currency-rate-auto-update",
-    "name": "Currency Rate Auto Update",
+    "name": "FX Rate Sync",
     "mrdr": "modules"
 }
