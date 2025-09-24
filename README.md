@@ -7,7 +7,7 @@
 **License:** [GPL-2.0+](https://www.gnu.org/licenses/gpl-2.0.html)  
 **Requires PHP:** 7.4+  
 **Requires at least PipraPay version:** 1.0.0  
-**Plugin URI:** [GitHub Repository]([https://github.com/fattain-naime/Currency-Rate-Auto-Update-for-PipraPay](https://github.com/fattain-naime/currency-rate-auto-update/)
+**Plugin URI:** [GitHub Repository](https://github.com/fattain-naime/currency-rate-auto-update/)
 
 ---
 
